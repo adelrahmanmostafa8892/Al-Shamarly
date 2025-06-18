@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مصحف الشمرلي - لوحة التحكم</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1 class="app-title">مصحف الشمرلي</h1>
+            <p class="app-subtitle">نظام متقدم لمتابعة تقدم العمل - 604 صفحة</p>
+        </header>
+        
+        <div class="stats-grid">
+            <div class="stat-card total">
+                <div class="stat-value" id="totalTasks">604</div>
+                <div class="stat-label">إجمالي الصفحات</div>
+            </div>
+            <div class="stat-card completed">
+                <div class="stat-value" id="completedTasks">0</div>
+                <div class="stat-label">صفحات مكتملة</div>
+            </div>
+            <div class="stat-card in-progress">
+                <div class="stat-value" id="inProgressTasks">0</div>
+                <div class="stat-label">قيد التنفيذ</div>
+            </div>
+            <div class="stat-card pending">
+                <div class="stat-value" id="pendingTasks">604</div>
+                <div class="stat-label">صفحات معلقة</div>
+            </div>
+        </div>
+        
+        <div class="controls-panel">
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th-large"></i> الكل
+                </button>
+                <button class="filter-btn" data-filter="completed">
+                    <i class="fas fa-check-circle"></i> المكتملة
+                </button>
+                <button class="filter-btn" data-filter="in-progress">
+                    <i class="fas fa-spinner"></i> قيد التنفيذ
+                </button>
+                <button class="filter-btn" data-filter="pending">
+                    <i class="far fa-clock"></i> المعلقة
+                </button>
+            </div>
+            
+            <div class="search-wrapper">
+                <input type="text" class="search-input" placeholder="ابحث عن صفحة..." id="searchInput">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+        </div>
+        
+        <div class="tasks-grid" id="tasksContainer">
+            <!-- سيتم ملؤها بواسطة JavaScript -->
+        </div>
+    </div>
+    
+    <button class="fab" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>
